@@ -1,0 +1,78 @@
+{
+  "name": "@helpers-work/json-sort",
+  "version": "0.1.0",
+  "description": "Sort JSON object keys deterministically and format the result. Library and CLI for files and CI.",
+  "license": "MIT",
+  "author": {
+    "name": "Julian Halden",
+    "email": "julianhalden.dev@gmail.com"
+  },
+  "homepage": "https://github.com/helpers-work/json-sort#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helpers-work/json-sort.git"
+  },
+  "bugs": {
+    "url": "https://github.com/helpers-work/json-sort/issues",
+    "email": "support@helpers.work"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/cjs/index.d.ts",
+  "bin": {
+    "json-sort": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "json",
+    "sort",
+    "keys",
+    "format",
+    "cli",
+    "deterministic"
+  ],
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint .",
+    "build": "node scripts/build.mjs",
+    "test": "npm run build && node --test \"tests/unit/*.test.ts\" \"tests/cli/*.test.ts\"",
+    "test:unit": "node --test \"tests/unit/*.test.ts\"",
+    "test:cli": "node --test \"tests/cli/*.test.ts\"",
+    "test:package": "node scripts/package-smoke.mjs"
+  },
+  "dependencies": {
+    "jsonc-parser": "3.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "22.20.4",
+    "esbuild": "0.28.2",
+    "eslint": "10.11.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.70.1"
+  }
+}
