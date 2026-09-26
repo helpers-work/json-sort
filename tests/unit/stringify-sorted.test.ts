@@ -171,8 +171,9 @@ describe("unsupported values", () => {
 
   test("sparse arrays", () => {
     // eslint-disable-next-line no-sparse-arrays
+    const sparse = [1, , 3];
     const error = expectError(
-      () => stringifySorted(asJson([1, , 3])),
+      () => stringifySorted(asJson(sparse)),
       "UNSUPPORTED_VALUE",
     );
     assert.deepEqual(error.path, [1]);
