@@ -1,6 +1,6 @@
 {
   "name": "@helpers-work/json-sort",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Sort JSON object keys deterministically and format the result. Library and CLI for files and CI.",
   "license": "MIT",
   "author": {

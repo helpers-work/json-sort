@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1 — 2026-09-26
+
+- First version published to npm. Same functionality as 0.1.0, which was tagged but never published because the release pipeline failed.
+- Package smoke test supports the npm 12 `npm pack --json` output format.
+
 ## 0.1.0 — 2026-09-26
 
 - `formatJson(text, options)`: strict JSON parsing, key sorting, re-indentation; string and number literals are copied verbatim.
