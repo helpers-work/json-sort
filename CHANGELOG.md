@@ -2,7 +2,7 @@
 
 ## 0.1.1 — 2026-09-26
 
-- First version published to npm. Same functionality as 0.1.0, which was tagged but never published because the release pipeline failed.
+- First release published from GitHub Actions with npm provenance. No functional changes since 0.1.0.
 - Package smoke test supports the npm 12 `npm pack --json` output format.
 
 ## 0.1.0 — 2026-09-26
