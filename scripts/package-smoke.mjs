@@ -67,9 +67,13 @@ try {
   );
 
   step("npm pack");
-  const packed = JSON.parse(
+  const packOutput = JSON.parse(
     sh("npm", ["pack", "--json", "--pack-destination", work], root),
-  )[0];
+  );
+  // npm <= 11 prints an array, npm 12+ an object keyed by package name
+  const packed = Array.isArray(packOutput)
+    ? packOutput[0]
+    : Object.values(packOutput)[0];
   tarball = join(work, packed.filename);
   const files = packed.files.map((f) => f.path).sort();
   console.log(files.join("\n"));

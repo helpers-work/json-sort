@@ -23,7 +23,7 @@ jobs:
                   cache: npm
                   registry-url: https://registry.npmjs.org
             # Trusted publishing (OIDC) needs npm >= 11.5.1
-            - run: npm install -g npm@latest
+            - run: npm install -g npm@11
             - name: Check tag matches package.json version
               env:
                   TAG: ${{ github.event.release.tag_name }}
